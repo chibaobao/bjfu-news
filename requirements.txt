@@ -1,0 +1,10 @@
+# scrapy
+# wheel
+chardet
+lxml
+bs4
+requests
+pymongo
+jieba
+whoosh
+flask

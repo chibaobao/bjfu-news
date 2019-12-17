@@ -25,6 +25,7 @@
 └─requirements.txt
 ```
 ## python类介绍
+其中基础类是通用类可以用到其他爬虫相关的项目上
 
 ### GetBjfuHtmls
 - 针对绿色新闻网的爬虫，用一个起始url进行初试化

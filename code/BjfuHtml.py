@@ -33,7 +33,7 @@ class GetBjfuHtmls:
         index = 0
         while True:
             url = self.scheduler.get()
-            print(url,len(self.scheduler),index )
+            print(url,"待爬取url数量:",len(self.scheduler),"已经爬取url数量:",index )
             index +=1
             if url == None:
                 break

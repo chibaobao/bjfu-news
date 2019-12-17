@@ -57,3 +57,7 @@
     - get_html方法获取整个html（shtring类型）
     - et_all_url方法获取页面中的全部url
     - 子类可以利用self.soup（BeautifulSoup(self.html_text, 'lxml') 的返回）对页面进行分析
+    
+### MyWhoosh（基础类）
+- 对whoosh的简单封装
+- 提供增删查3种方法，可以插入一篇文章，然后通过关键字调用find查找这篇文章

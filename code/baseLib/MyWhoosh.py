@@ -56,7 +56,7 @@ class MyWhoosh:
         except:
             word = None
         if word is not None:
-            hits = searcher.search(word)
+            hits = searcher.search(word,limit = None)
             for hit in hits:
                 ret_list.append(dict(hit))
         return ret_list

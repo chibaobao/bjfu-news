@@ -23,10 +23,10 @@ class MyWhoosh:
                                content=TEXT(stored=True, analyzer=analyzer))
         try:
             self.ix = index.open_dir(path, index_name)
-            print("use old index")
+            print("索引文件已经存在，use old index")
         except:
             self.ix = create_in(path, schema=schema, indexname= index_name)  # path 为索引创建的地址，indexname为索引名称
-            print("creat net index")
+            print("没有检测到旧索引文件，creat net index")
 
     def insert( self, path, title, content):
         '''

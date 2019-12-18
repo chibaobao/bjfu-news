@@ -22,6 +22,7 @@ wh = MyWhoosh("./indexPath",'myindex')
 server = Flask(__name__,static_url_path='')
 
 def main():
+    print("请保证mongodb数据库已配置正确，否则将引起程序崩溃")
     #数据库
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     mydb = myclient["mydatabase"]

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from whoosh.index import create_in,open_dir
 from whoosh import fields
 from whoosh.fields import TEXT,ID

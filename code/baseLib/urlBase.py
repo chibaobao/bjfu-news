@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from urllib import request
 import chardet
 from bs4 import    BeautifulSoup

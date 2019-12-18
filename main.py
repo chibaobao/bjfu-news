@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from code.BjfuHtml import GetBjfuHtmls
 from code.baseLib.MyWhoosh import MyWhoosh
 import pymongo
@@ -48,8 +49,5 @@ def searchMedicine():
     return json.dumps(result, ensure_ascii=False)
 
 if __name__ == "__main__":
-    # url3 = "http://news.bjfu.edu.cn"
-    # bjfu = GetBjfuHtmls(url3)
-    # bjfu.start()
     main()
     server.run(port=5000, host='0.0.0.0')

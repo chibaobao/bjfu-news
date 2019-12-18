@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from code.baseLib.urlBase import Scheduler,HtmlPage
 from bs4 import    BeautifulSoup
 from urllib.parse import urlparse

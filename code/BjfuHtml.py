@@ -45,7 +45,7 @@ class GetBjfuHtmls:
                     html.request()
                     break
                 except:
-                    print("time out,sleep 1 sec, try again")
+                    print("request time out,sleep 1 sec, try again")
                     time.sleep(1)
                     continue
 
@@ -111,7 +111,15 @@ class BjfuHtmlPage(HtmlPage):
         click_time_url_text = self.soup.find_all("script", attrs={"src":re.compile(r"/cms/web/count.jsp*")})
         if len(click_time_url_text) > 0:
             click_time_url_text = click_time_url_text[0]['src']
-            req_click_time = requests.get(self.url_scheme + "://" + self.url_netloc+ click_time_url_text)
+            #处理网络超时，当网络超时，sleep 1 秒后重新爬取数据
+            while True:
+                try:
+                    req_click_time = requests.get(self.url_scheme + "://" + self.url_netloc+ click_time_url_text)
+                    break
+                except:
+                    print("request time out,sleep 1 sec, try again")
+                    time.sleep(1)
+                    continue
             soup_click_time = BeautifulSoup(req_click_time.text, 'html.parser').text
             click_time_text = eval(re.findall(r'[(](.*?)[)]', soup_click_time)[0])  # 获取点击次数结束
         return {"_id": self.url_str, "title":title_text ,"text":all_context_text ,"publishTime":publish_time_text ,"fromText":from_text ,"authon":author_text ,"clickTime":click_time_text}

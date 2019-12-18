@@ -7,8 +7,9 @@
 4. 搭建人机交互的搜索引擎Web界面。使用flask框架进行HTTP响应
 
 ## 使用方法
-1. 启动mongodb，并在main.py中的main函数中设置连接mongodb方式，默认是5000端口，数据库无密码
-2. 运行mian.py，当第二次运行时可以注释掉main函数，只启动http（main函数的主要功能是爬取数据并保存到数据库）
+1. 启动mongodb，并在main.py中的main函数中设置连接mongodb方式，默认是5000端口，数据库无密码， [mongodb安装教程-仅供参考](https://www.runoob.com/mongodb/mongodb-window-install.html)
+2. 运行``pip install -r requirements.txt`` 安装依赖库，这里推荐豆瓣的源``-i https://pypi.doubanio.com/simple``
+3. 运行mian.py，当第二次运行时可以注释掉main函数，只启动http（main函数的主要功能是爬取数据并保存到数据库）
 
 ## 目录结构
 ```

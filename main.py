@@ -34,9 +34,10 @@ def main():
     bjfu.start(mycol)
     #搜索引擎
     # wh = MyWhoosh("./indexPath",'myindex')
+    print("正在建立文本数据的索引，请等待十几秒...")
     wh.insetList([ [x["_id"],x["title"],x["text"]] for x in mycol.find({}, {"_id": 1, "title": 1, "text": 1})])
     #查询
-    print("测试，查找使命：",wh.find("使命"))
+    print("测试，查找“使命”：",wh.find("使命"))
 
 @server.route('/')
 def home():

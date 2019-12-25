@@ -41,6 +41,17 @@ class MyWhoosh:
         writer.delete_by_term("path", path) # 为了保证唯一性，先尝试将就path数据删除
         writer.add_document(title = title, path= path, content = content)  # 此处为添加的内容
         writer.commit()
+    def insetList(self,data_list):
+        '''
+        与insert类似，但是一次插入多条数据
+        :param data_list: 格式为 [[path, title, content],[path, title, content],...]
+        :return:
+        '''
+        writer = self.ix.writer()
+        for x in data_list:
+            writer.delete_by_term("path", x[0]) # 为了保证唯一性，先尝试将就path数据删除
+            writer.add_document( path= x[0], title = x[1],content = x[2])  # 此处为添加的内容
+        writer.commit()
 
     def find(self,text):
         '''

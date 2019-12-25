@@ -34,8 +34,7 @@ def main():
     bjfu.start(mycol)
     #搜索引擎
     # wh = MyWhoosh("./indexPath",'myindex')
-    for x in mycol.find({}, {"_id": 1, "title": 1, "text": 1}):
-        wh.insert(x["_id"],x["title"],x["text"])
+    wh.insetList([ [x["_id"],x["title"],x["text"]] for x in mycol.find({}, {"_id": 1, "title": 1, "text": 1})])
     #查询
     print("测试，查找使命：",wh.find("使命"))
 
